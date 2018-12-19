@@ -1,25 +1,41 @@
 package com.lin;
 
 import com.lin.el.ElConfig;
+import com.lin.prepost.BeanWayService;
+import com.lin.prepost.Jsr250WayService;
+import com.lin.prepost.PreConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String []args){
 
-        //读取配置文件
-        SpringApplication springApplication = new SpringApplication(DemoApplication.class);
-        ConfigurableApplicationContext configurableApplicationContext = springApplication.run(args);
+        //el start
+//        SpringApplication springApplication = new SpringApplication(DemoApplication.class);
+//        ConfigurableApplicationContext configurableApplicationContext = springApplication.run(args);
+//
+//        ElConfig elConfig = configurableApplicationContext.getBean(ElConfig.class);
+//
+//        String property = configurableApplicationContext.getEnvironment().getProperty("el.author");
+//        System.out.println("property" + property);
+//        System.out.println("getAuthor" + elConfig.getAuthor());
+//        System.out.println("getName" + elConfig.getName());
+//        System.out.println("getType" + elConfig.getType());
+        //el and config end
 
-        ElConfig elConfig = configurableApplicationContext.getBean(ElConfig.class);
+        //prepost start
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(PreConfig.class);
+        BeanWayService beanWayService = annotationConfigApplicationContext.getBean(BeanWayService.class);
+        Jsr250WayService jsr250WayServiceName = (Jsr250WayService)annotationConfigApplicationContext.getBean("jsr");
+        Jsr250WayService jsr250WayService = (Jsr250WayService)annotationConfigApplicationContext.getBean(Jsr250WayService.class);
+        System.out.println(jsr250WayServiceName);
+        System.out.println(jsr250WayService);
+        annotationConfigApplicationContext.close();
+        //prepost end
 
-        String property = configurableApplicationContext.getEnvironment().getProperty("el.author");
-        System.out.println("property" + property);
-        System.out.println("getAuthor" + elConfig.getAuthor());
-        System.out.println("getName" + elConfig.getName());
-        System.out.println("getType" + elConfig.getType());
 
     }
 }

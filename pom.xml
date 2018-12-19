@@ -49,7 +49,7 @@
         </dependency>
         <!--spring aop end-->
 
-        <!--el-->
+        <!--el 语法-->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -61,8 +61,15 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--el-->
+        <!--el end-->
 
+        <!--JSR250-->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--jsr end-->
 
     </dependencies>
 
