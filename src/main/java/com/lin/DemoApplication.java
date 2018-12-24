@@ -1,6 +1,8 @@
 package com.lin;
 
 import com.lin.el.ElConfig;
+import com.lin.event.DemoPublisher;
+import com.lin.event.EventConfig;
 import com.lin.prepost.BeanWayService;
 import com.lin.prepost.Jsr250WayService;
 import com.lin.prepost.PreConfig;
@@ -39,15 +41,22 @@ public class DemoApplication {
         //prepost end
 
         //profile start
-        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
-        annotationConfigApplicationContext.getEnvironment().setActiveProfiles("dev");
-        annotationConfigApplicationContext.register(ProfileConfig.class);
-        annotationConfigApplicationContext.refresh();
-
-        DemoBean demoBean = annotationConfigApplicationContext.getBean(DemoBean.class);
-        System.out.println(demoBean.getContent());
-        annotationConfigApplicationContext.close();
+//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
+//        annotationConfigApplicationContext.getEnvironment().setActiveProfiles("dev");
+//        annotationConfigApplicationContext.register(ProfileConfig.class);
+//        annotationConfigApplicationContext.refresh();
+//
+//        DemoBean demoBean = annotationConfigApplicationContext.getBean(DemoBean.class);
+//        System.out.println(demoBean.getContent());
+//        annotationConfigApplicationContext.close();
         //profile end
+
+        //event start
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(EventConfig.class);
+        DemoPublisher demoPublisher = annotationConfigApplicationContext.getBean(DemoPublisher.class);
+        demoPublisher.publisher("test msg");
+        annotationConfigApplicationContext.close();
+        //event end
 
 
     }
