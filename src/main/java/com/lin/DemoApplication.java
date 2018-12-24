@@ -1,16 +1,9 @@
 package com.lin;
 
-import com.lin.el.ElConfig;
 import com.lin.event.DemoPublisher;
 import com.lin.event.EventConfig;
-import com.lin.prepost.BeanWayService;
-import com.lin.prepost.Jsr250WayService;
-import com.lin.prepost.PreConfig;
-import com.lin.profile.DemoBean;
-import com.lin.profile.ProfileConfig;
-import org.springframework.boot.SpringApplication;
+import com.lin.task.TaskExecutorConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
@@ -41,22 +34,34 @@ public class DemoApplication {
         //prepost end
 
         //profile start
-//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
-//        annotationConfigApplicationContext.getEnvironment().setActiveProfiles("dev");
-//        annotationConfigApplicationContext.register(ProfileConfig.class);
-//        annotationConfigApplicationContext.refresh();
-//
-//        DemoBean demoBean = annotationConfigApplicationContext.getBean(DemoBean.class);
-//        System.out.println(demoBean.getContent());
-//        annotationConfigApplicationContext.close();
+        //AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
+        //annotationConfigApplicationContext.getEnvironment().setActiveProfiles("dev");
+        //annotationConfigApplicationContext.register(ProfileConfig.class);
+        //annotationConfigApplicationContext.refresh();
+
+        //DemoBean demoBean = annotationConfigApplicationContext.getBean(DemoBean.class);
+        //System.out.println(demoBean.getContent());
+        //annotationConfigApplicationContext.close();
         //profile end
 
         //event start
-        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(EventConfig.class);
-        DemoPublisher demoPublisher = annotationConfigApplicationContext.getBean(DemoPublisher.class);
-        demoPublisher.publisher("test msg");
-        annotationConfigApplicationContext.close();
+        //AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(EventConfig.class);
+        //DemoPublisher demoPublisher = annotationConfigApplicationContext.getBean(DemoPublisher.class);
+        //demoPublisher.publisher("test msg");
+        //annotationConfigApplicationContext.close();
         //event end
+
+        //task Executor
+        //AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(TaskExecutorConfig.class);
+        //AsyncTaskService a = annotationConfigApplicationContext.getBean(AsyncTaskService.class);
+        //for (int i = 0; i < 10; i++) {
+        //    a.executeAsyncTask(i);
+        //    a.executeAsyncTaskPlus(i);
+        //}
+        //annotationConfigApplicationContext.close();
+        //task end
+
+
 
 
     }
