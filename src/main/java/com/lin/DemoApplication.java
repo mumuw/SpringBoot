@@ -2,6 +2,7 @@ package com.lin;
 
 import com.lin.event.DemoPublisher;
 import com.lin.event.EventConfig;
+import com.lin.schedule.ScheduleConfig;
 import com.lin.task.TaskExecutorConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -61,6 +62,9 @@ public class DemoApplication {
         //annotationConfigApplicationContext.close();
         //task end
 
+        //Schedule start
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(ScheduleConfig.class);
+        //Schedule end
 
 
 
