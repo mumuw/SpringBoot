@@ -1,5 +1,7 @@
 package com.lin;
 
+import com.lin.conditional.ConditionConfig;
+import com.lin.conditional.ListServer;
 import com.lin.event.DemoPublisher;
 import com.lin.event.EventConfig;
 import com.lin.schedule.ScheduleConfig;
@@ -63,8 +65,17 @@ public class DemoApplication {
         //task end
 
         //Schedule start
-        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(ScheduleConfig.class);
+        //AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(ScheduleConfig.class);
         //Schedule end
+
+        //Conditional start
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(ConditionConfig.class);
+        ListServer listServer = annotationConfigApplicationContext.getBean(ListServer.class);
+        System.out.println("listServer:" + listServer.showCmd());
+        annotationConfigApplicationContext.close();
+        //Conditional end
+
+
 
 
 
