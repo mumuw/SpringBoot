@@ -7,8 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ComponentScan("com.lin.conditional")
+@WiselyConfiguration("com.lin.conditional")
 public class ConditionConfig {
 
     @Bean
@@ -21,11 +20,4 @@ public class ConditionConfig {
     public ListServer linuxListServer(){
         return new LinuxListServerImpl();
     }
-
-
-
-
-
-
-
 }
