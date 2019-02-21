@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 
 @Component
 public class AsyncTaskService {
-    @Async
+//    @Async
     public void executeAsyncTask(Integer integer) {
         System.out.println("execute task :" + integer);
     }
 
-    @Async
+//    @Async
     public void executeAsyncTaskPlus(Integer integer) {
         System.out.println("execute task + 1:" + (integer + 1));
     }
