@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://inslab.ru/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://inslab.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://inslab.ru/">
+      <s:element name="ExecProc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecProcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecProcResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecProcJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecProcJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecProcJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExecProcSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecProc" />
+  </wsdl:message>
+  <wsdl:message name="ExecProcSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecProcResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecProcJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecProcJson" />
+  </wsdl:message>
+  <wsdl:message name="ExecProcJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecProcJsonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="kiasSvcSoap">
+    <wsdl:operation name="ExecProc">
+      <wsdl:input message="tns:ExecProcSoapIn" />
+      <wsdl:output message="tns:ExecProcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecProcJson">
+      <wsdl:input message="tns:ExecProcJsonSoapIn" />
+      <wsdl:output message="tns:ExecProcJsonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="kiasSvcSoap" type="tns:kiasSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecProc">
+      <soap:operation soapAction="http://inslab.ru/ExecProc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecProcJson">
+      <soap:operation soapAction="http://inslab.ru/ExecProcJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="kiasSvcSoap12" type="tns:kiasSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecProc">
+      <soap12:operation soapAction="http://inslab.ru/ExecProc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecProcJson">
+      <soap12:operation soapAction="http://inslab.ru/ExecProcJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="kiasSvc">
+    <wsdl:port name="kiasSvcSoap" binding="tns:kiasSvcSoap">
+      <soap:address location="http://rep.absolutins.ru:8080/FrontSvcRep/kiassvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="kiasSvcSoap12" binding="tns:kiasSvcSoap12">
+      <soap12:address location="http://rep.absolutins.ru:8080/FrontSvcRep/kiassvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
