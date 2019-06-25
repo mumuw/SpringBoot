@@ -1,4 +1,4 @@
-package com.lin.factory.abstractFactory;
+package com.lin.factory;
 
 import com.lin.factory.ICourse;
 
@@ -6,6 +6,6 @@ public class JavaCourse implements ICourse {
 
     @Override
     public void learning() {
-        System.out.println("learning Java course");
+        System.out.println("learning Java");
     }
 }

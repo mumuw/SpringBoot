@@ -1,7 +1,7 @@
 package com.lin.factory.simpleFactory;
 
 import com.lin.factory.ICourse;
-import com.lin.factory.abstractFactory.JavaCourse;
+import com.lin.factory.JavaCourse;
 
 public class SimpleTestCourseFactory {
     public static void main(String[] args) {

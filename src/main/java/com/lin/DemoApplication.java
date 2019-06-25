@@ -9,11 +9,8 @@ import com.lin.schedule.ScheduleConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource({"classpath*:webservice-client.xml"})
-
 public class DemoApplication {
     public static void main(String []args){
 
