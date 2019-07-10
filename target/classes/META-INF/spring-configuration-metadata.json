@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "auth",
+      "type": "com.lin.config.AuthorConfig",
+      "sourceType": "com.lin.config.AuthorConfig"
+    },
+    {
+      "name": "el",
+      "type": "com.lin.el.ElConfig",
+      "sourceType": "com.lin.el.ElConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "auth.age",
+      "type": "java.lang.String",
+      "sourceType": "com.lin.config.AuthorConfig"
+    },
+    {
+      "name": "auth.name",
+      "type": "java.lang.String",
+      "sourceType": "com.lin.config.AuthorConfig"
+    },
+    {
+      "name": "el.author",
+      "type": "java.lang.String",
+      "sourceType": "com.lin.el.ElConfig"
+    },
+    {
+      "name": "el.name",
+      "type": "java.lang.String",
+      "sourceType": "com.lin.el.ElConfig"
+    },
+    {
+      "name": "el.type",
+      "type": "java.lang.String",
+      "sourceType": "com.lin.el.ElConfig"
+    },
+    {
+      "name": "el.type2",
+      "type": "java.lang.String",
+      "sourceType": "com.lin.el.ElConfig"
+    }
+  ],
+  "hints": []
+}
