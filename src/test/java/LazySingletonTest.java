@@ -1,3 +1,5 @@
+import com.lin.designPatterns.singleton.lazy.LazyInnerClassSingleton;
+
 /**
  * Created by lin on 2019/7/10.
  */
@@ -8,5 +10,7 @@ public class  LazySingletonTest {
         t1.start();
         t2.start();
         System.out.println("Executor end");
+
+
     }
 }
