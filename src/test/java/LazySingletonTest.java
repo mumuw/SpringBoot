@@ -1,5 +1,3 @@
-import com.lin.designPatterns.singleton.lazy.LazyInnerClassSingleton;
-
 /**
  * Created by lin on 2019/7/10.
  */

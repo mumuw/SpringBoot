@@ -1,5 +1,4 @@
-import com.lin.designPatterns.singleton.seriable.SeriableSingleton;
-import org.springframework.expression.spel.ast.NullLiteral;
+import com.lin.pattern.singleton.seriable.SeriableSingleton;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

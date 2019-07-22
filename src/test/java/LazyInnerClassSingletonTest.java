@@ -1,4 +1,4 @@
-import com.lin.designPatterns.singleton.lazy.LazyInnerClassSingleton;
+import com.lin.pattern.singleton.lazy.LazyInnerClassSingleton;
 
 import java.lang.reflect.Constructor;
 

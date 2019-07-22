@@ -1,4 +1,4 @@
-import com.lin.designPatterns.singleton.register.Enum.EnumSingleton;
+import com.lin.pattern.singleton.register.Enum.EnumSingleton;
 
 import java.lang.reflect.Constructor;
 

@@ -1,5 +1,4 @@
-import com.lin.designPatterns.singleton.lazy.LazyDoubleCheckSingleton;
-import com.lin.designPatterns.singleton.lazy.LazySimpleSingleton;
+import com.lin.pattern.singleton.lazy.LazyDoubleCheckSingleton;
 
 /**
  * Created by lin on 2019/7/10.
