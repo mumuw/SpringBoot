@@ -10,4 +10,9 @@ public class Son implements Person{
         System.out.println("sex");
 
     }
+
+    @Override
+    public void findGirl() {
+        System.out.println("beautiful");
+    }
 }

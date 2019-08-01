@@ -5,4 +5,5 @@ package com.lin.pattern.proxy.staticproxy;
  */
 public interface Person {
     void findLove();
+    void findGirl();
 }

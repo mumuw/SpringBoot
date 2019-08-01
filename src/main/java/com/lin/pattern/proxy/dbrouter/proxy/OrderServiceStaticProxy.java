@@ -3,7 +3,7 @@ package com.lin.pattern.proxy.dbrouter.proxy;
 import com.lin.pattern.proxy.dbrouter.IOrderService;
 import com.lin.pattern.proxy.dbrouter.Order;
 import com.lin.pattern.proxy.dbrouter.db.DynamicDataSourceEntity;
-import com.sun.jdi.IntegerType;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

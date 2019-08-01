@@ -1,5 +1,7 @@
 package com.lin.pattern.proxy.dbrouter.db;
 
+import org.springframework.boot.jdbc.AbstractDataSourceInitializer;
+
 /**
  * Created by lin on 2019/7/22.
  */
